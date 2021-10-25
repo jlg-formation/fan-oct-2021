@@ -1,3 +1,32 @@
-header img {
+body {
+  font-family: sans-serif;
+}
+
+header {
+  background-color: #eee;
+  height: 3em;
+  padding: 0 0.5em;
+  display: flex;
+  align-items: center;
+}
+
+header a {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+
+  text-decoration: inherit;
+  color: inherit;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+header a img {
   height: 2.5em;
+}
+
+header a span {
+  font-size: 1.5em;
 }
