@@ -1,5 +1,7 @@
-(function () {
-  "use strict";
+console.log("module load");
 
-  angular.module("app", []);
-})();
+angular.module("app", []);
+
+require("./header/header.component");
+require("./body/body.component");
+require("./footer/footer.component");

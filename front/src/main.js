@@ -1,3 +1,2 @@
-(function () {
-  "use strict";
-})();
+import "angular";
+import "./app/app.module";
