@@ -1,5 +1,9 @@
 (function () {
   "use strict";
 
-  angular.module("appGestionStock", []);
+  var module = angular.module("appGestionStock", []);
+
+  module.component("appHeader", {
+    template: "<header>Gestion Stock</header>",
+  });
 })();
