@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var module = angular.module("appGestionStock", []);
+  var module = angular.module("app", []);
 
   module.component("appHeader", {
     templateUrl: "tmpl/appHeader.html",

@@ -1,5 +1,9 @@
 body {
   font-family: sans-serif;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  justify-content: space-between;
 }
 
 header {
@@ -29,4 +33,21 @@ header a img {
 
 header a span {
   font-size: 1.5em;
+}
+
+footer {
+  background-color: #eee;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
