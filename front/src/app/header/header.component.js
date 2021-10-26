@@ -1,4 +1,5 @@
 import html from "./header.component.html";
+import "./header.component.scss";
 
 console.log("header load");
 
