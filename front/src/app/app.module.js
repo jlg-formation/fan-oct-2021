@@ -13,11 +13,12 @@ require("./routes/legal/legal.component");
 
 module.config([
   "$stateProvider",
-  function ($stateProvider) {
+  "$urlRouterProvider",
+  function ($stateProvider, $urlRouterProvider) {
     console.log("configuring router");
     var homeState = {
       name: "home",
-      url: "/home",
+      url: "/",
       component: "appHome",
     };
 
@@ -29,5 +30,7 @@ module.config([
 
     $stateProvider.state(legalState);
     $stateProvider.state(homeState);
+
+    $urlRouterProvider.otherwise("/");
   },
 ]);
