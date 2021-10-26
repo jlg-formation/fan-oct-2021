@@ -1,18 +1,19 @@
 <main>
   <h1>Ajouter un article</h1>
-  <form>
+  <form name="f">
     <label>
       <div>Nom</div>
-      <input type="text" />
+      <input type="text" ng-model="article.name" required />
     </label>
     <label>
       <div>Prix</div>
-      <input type="number" />
+      <input type="number" step="0.01" ng-model="article.price" required />
     </label>
     <label>
       <div>Quantité</div>
-      <input type="number" />
+      <input type="number" ng-model="article.qty" required />
     </label>
-    <button class="primary">Ajouter</button>
+    <button ng-disabled="f.$invalid" class="primary">Ajouter</button>
   </form>
+  {{ article }}
 </main>
