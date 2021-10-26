@@ -1,6 +1,6 @@
-"use strict";
+import html from "./body.component.html";
 
 var module = angular.module("app");
 module.component("appBody", {
-  templateUrl: "app/body/body.component.html",
+  template: html,
 });
