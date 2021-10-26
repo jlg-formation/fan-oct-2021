@@ -6,9 +6,16 @@ module.component("appAdd", {
   template: html,
   controller: [
     "articleService",
-    function (articleService) {
+    "$state",
+    function (articleService, $state) {
+      this.article = {
+        name: "Truc",
+        price: 1.23,
+        qty: 100,
+      };
       this.submit = function () {
-        console.log("submit");
+        articleService.add(this.article);
+        $state.go("stockList");
       };
     },
   ],

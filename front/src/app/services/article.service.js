@@ -8,4 +8,8 @@ module.service("articleService", function ArticleService() {
     { name: "Tondeuse à gazon", price: 200, qty: 4 },
     { name: "Marteau", price: 1.23, qty: 200 },
   ];
+
+  this.add = function (article) {
+    this.articles.push(article);
+  };
 });
