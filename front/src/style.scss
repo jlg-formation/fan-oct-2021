@@ -12,6 +12,23 @@ body {
   flex-flow: column;
   min-height: 100vh;
   justify-content: space-between;
+
+  app-body {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+  }
+}
+
+ui-view {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+
+  > * {
+    flex-grow: 1;
+  }
 }
 
 h1 {
