@@ -11,5 +11,13 @@ module.service("articleService", function ArticleService() {
 
   this.add = function (article) {
     this.articles.push(article);
+    this.$http
+      .post("/api/articles", article)
+      .then(() => {
+        this.refresh();
+      })
+      .catch((err) => {
+        console.log("err: ", err);
+      });
   };
 });
