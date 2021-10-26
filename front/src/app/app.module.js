@@ -4,6 +4,8 @@ import "./stock/stock.module";
 
 var module = angular.module("app", ["ui.router", "app.stock"]);
 
+require("./services/article.service");
+
 require("./header/header.component");
 require("./body/body.component");
 require("./footer/footer.component");
