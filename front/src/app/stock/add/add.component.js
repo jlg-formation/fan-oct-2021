@@ -7,7 +7,7 @@ module.component("appAdd", {
   controller: [
     "articleService",
     "$state",
-    function (articleService, $state) {
+    function AppAddCtrl(articleService, $state) {
       this.article = {
         name: "Truc",
         price: 1.23,
