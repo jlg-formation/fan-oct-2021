@@ -30,6 +30,10 @@ module.exports = {
       {
         test: /\.html$/i,
         loader: "html-loader",
+        options: {
+          // Disables attributes processing
+          sources: false,
+        },
       },
       {
         test: /\.s[ac]ss$/i,
