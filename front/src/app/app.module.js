@@ -16,20 +16,27 @@ module.config([
   "$urlRouterProvider",
   function ($stateProvider, $urlRouterProvider) {
     console.log("configuring router");
-    var homeState = {
+    $stateProvider.state({
       name: "home",
       url: "/",
       component: "appHome",
-    };
-
-    var legalState = {
+    });
+    $stateProvider.state({
       name: "legal",
       url: "/legal",
       component: "appLegal",
-    };
+    });
 
-    $stateProvider.state(legalState);
-    $stateProvider.state(homeState);
+    $stateProvider.state({
+      name: "stockList",
+      url: "/stock",
+      component: "appList",
+    });
+    $stateProvider.state({
+      name: "stockAdd",
+      url: "/stock/add",
+      component: "appAdd",
+    });
 
     $urlRouterProvider.otherwise("/");
   },
