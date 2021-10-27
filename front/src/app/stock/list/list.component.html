@@ -21,7 +21,7 @@
           ng-click="$ctrl.toggle(a)"
           ng-repeat="a in $ctrl.articleService.articles | filter: $ctrl.lessthan1"
         >
-          <td class="name">{{ a.name | ellipsis: 13 }}</td>
+          <td class="name">{{ a.name | ellipsis: 25 }}</td>
           <td class="price">{{ a.price | currency }}</td>
           <td class="qty">{{ a.qty }}</td>
         </tr>
