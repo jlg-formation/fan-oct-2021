@@ -1,4 +1,4 @@
-var module = angular.module("app");
+const module = angular.module("app");
 
 const url = "/articles";
 
