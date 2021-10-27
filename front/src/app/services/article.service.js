@@ -12,7 +12,6 @@ module.service("articleService", [
     ];
 
     this.add = function (article) {
-      this.articles.push(article);
       $http
         .post("http://localhost:3000/api/articles", article)
         .then(() => {
