@@ -30,7 +30,7 @@ module.component("appList", {
         this.selectedArticles.clear();
       };
 
-      this.lessthan1 = function (article, index, array) {
+      this.lessthan1 = function (article) {
         return article.price > 1;
       };
     },
