@@ -9,6 +9,21 @@ module.component("appList", {
     function AppListCtrl(articleService) {
       console.log("articleService: ", articleService);
       this.articleService = articleService;
+
+      this.selectedArticles = new Set();
+
+      this.toggle = function (article) {
+        console.log("article: ", article);
+        if (this.selectedArticles.has(article)) {
+          this.selectedArticles.delete(article);
+          return;
+        }
+        this.selectedArticles.add(article);
+      };
+
+      this.hasSelected = function () {
+        return this.selectedArticles.size > 0;
+      };
     },
   ],
 });
