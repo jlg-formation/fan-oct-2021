@@ -17,6 +17,9 @@ module.exports = {
     compress: true,
     port: 9000,
     historyApiFallback: true,
+    proxy: {
+      "/articles": "http://localhost:3000",
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({

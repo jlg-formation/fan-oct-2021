@@ -1,6 +1,6 @@
 var module = angular.module("app");
 
-const url = "http://localhost:3000/articles";
+const url = "/articles";
 
 module.service("articleService", [
   "$http",
