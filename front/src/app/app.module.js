@@ -16,7 +16,8 @@ require("./routes/legal/legal.component");
 module.config([
   "$stateProvider",
   "$urlRouterProvider",
-  function ($stateProvider, $urlRouterProvider) {
+  "$locationProvider",
+  function ($stateProvider, $urlRouterProvider, $locationProvider) {
     console.log("configuring router");
     $stateProvider.state({
       name: "home",
@@ -41,5 +42,6 @@ module.config([
     });
 
     $urlRouterProvider.otherwise("/");
+    $locationProvider.html5Mode(true);
   },
 ]);
