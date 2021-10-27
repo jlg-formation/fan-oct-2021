@@ -7,16 +7,21 @@ module.component("appAdd", {
   controller: [
     "articleService",
     "$state",
-    function AppAddCtrl(articleService, $state) {
-      this.article = {
-        name: "Truc",
-        price: 1.23,
-        qty: 100,
-      };
-      this.submit = function () {
-        articleService.add(this.article);
-        $state.go("stockList");
-      };
+    class AppAddCtrl {
+      constructor(articleService, $state) {
+        this.article = {
+          name: "Truc",
+          price: 1.23,
+          qty: 100,
+        };
+        this.articleService = articleService;
+        this.$state = $state;
+      }
+
+      submit() {
+        this.articleService.add(this.article);
+        this.$state.go("stockList");
+      }
     },
   ],
 });
