@@ -24,6 +24,11 @@ module.component("appList", {
       this.hasSelected = function () {
         return this.selectedArticles.size > 0;
       };
+
+      this.remove = () => {
+        this.articleService.remove(this.selectedArticles);
+        this.selectedArticles.clear();
+      };
     },
   ],
 });

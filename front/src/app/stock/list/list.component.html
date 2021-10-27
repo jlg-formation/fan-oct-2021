@@ -3,7 +3,9 @@
   <div class="content">
     <nav>
       <button ui-sref="stockAdd">Ajouter</button>
-      <button ng-if="$ctrl.hasSelected()">Supprimer</button>
+      <button ng-if="$ctrl.hasSelected()" ng-click="$ctrl.remove()">
+        Supprimer
+      </button>
     </nav>
     <table aria-label="Liste des articles">
       <thead>

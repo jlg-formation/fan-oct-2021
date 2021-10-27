@@ -1,8 +1,11 @@
 var module = angular.module("app");
 
+const url = "http://localhost:3000/articles";
+
 module.service("articleService", [
   "$http",
-  function ArticleService($http) {
+  "$q",
+  function ArticleService($http, $q) {
     this.articles = [
       { name: "Tournevis", price: 2.99, qty: 110 },
       { name: "Pelle", price: 3.5, qty: 20 },
@@ -12,8 +15,8 @@ module.service("articleService", [
     ];
 
     this.add = function (article) {
-      $http
-        .post("http://localhost:3000/api/articles", article)
+      return $http
+        .post(url, article)
         .then(() => {
           this.refresh();
         })
@@ -22,9 +25,31 @@ module.service("articleService", [
         });
     };
 
+    this.remove = function (selectedArticles) {
+      let promise = $q.resolve();
+      console.log("promise: ", promise);
+      for (const article of selectedArticles) {
+        promise = promise.then(() => {
+          console.log("delete article ", article.id);
+          return $http
+            .delete(url + "/" + article.id)
+            .then(() => {
+              console.log("delete success ", article.id);
+            })
+            .catch((err) => {
+              console.log("err: ", err);
+            });
+        });
+      }
+      promise.then(() => {
+        console.log("about to refresh");
+        return this.refresh();
+      });
+    };
+
     this.refresh = function () {
-      $http
-        .get("http://localhost:3000/api/articles")
+      return $http
+        .get(url)
         .then((response) => {
           console.log("response: ", response);
           this.articles = response.data;
