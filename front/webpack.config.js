@@ -29,12 +29,22 @@ module.exports = {
       patterns: [{ from: "src/assets", to: "assets" }],
     }),
   ],
+  devtool: "source-map",
   module: {
     rules: [
       {
         test: /\.js$/,
         enforce: "pre",
-        use: ["source-map-loader"],
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env"],
+              plugins: ["angularjs-annotate"],
+            },
+          },
+          "source-map-loader",
+        ],
       },
       {
         test: /\.html$/i,

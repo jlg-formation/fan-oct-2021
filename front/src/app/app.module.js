@@ -13,35 +13,30 @@ require("./footer/footer.component");
 require("./routes/home/home.component");
 require("./routes/legal/legal.component");
 
-module.config([
-  "$stateProvider",
-  "$urlRouterProvider",
-  "$locationProvider",
-  function ($stateProvider, $urlRouterProvider, $locationProvider) {
-    console.log("configuring router");
-    $stateProvider.state({
-      name: "home",
-      url: "/",
-      component: "appHome",
-    });
-    $stateProvider.state({
-      name: "legal",
-      url: "/legal",
-      component: "appLegal",
-    });
+module.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+  console.log("configuring router");
+  $stateProvider.state({
+    name: "home",
+    url: "/",
+    component: "appHome",
+  });
+  $stateProvider.state({
+    name: "legal",
+    url: "/legal",
+    component: "appLegal",
+  });
 
-    $stateProvider.state({
-      name: "stockList",
-      url: "/stock",
-      component: "appList",
-    });
-    $stateProvider.state({
-      name: "stockAdd",
-      url: "/stock/add",
-      component: "appAdd",
-    });
+  $stateProvider.state({
+    name: "stockList",
+    url: "/stock",
+    component: "appList",
+  });
+  $stateProvider.state({
+    name: "stockAdd",
+    url: "/stock/add",
+    component: "appAdd",
+  });
 
-    $urlRouterProvider.otherwise("/");
-    $locationProvider.html5Mode(true);
-  },
-]);
+  $urlRouterProvider.otherwise("/");
+  $locationProvider.html5Mode(true);
+});
