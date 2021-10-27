@@ -19,7 +19,7 @@
         <tr
           ng-class="{ selected: $ctrl.selectedArticles.has(a) }"
           ng-click="$ctrl.toggle(a)"
-          ng-repeat="a in $ctrl.articleService.articles"
+          ng-repeat="a in $ctrl.articleService.articles | filter: $ctrl.lessthan1"
         >
           <td class="name">{{ a.name | ellipsis: 13 }}</td>
           <td class="price">{{ a.price | currency }}</td>

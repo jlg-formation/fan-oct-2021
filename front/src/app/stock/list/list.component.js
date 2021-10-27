@@ -29,6 +29,10 @@ module.component("appList", {
         this.articleService.remove(this.selectedArticles);
         this.selectedArticles.clear();
       };
+
+      this.lessthan1 = function (article, index, array) {
+        return article.price > 1;
+      };
     },
   ],
 });
