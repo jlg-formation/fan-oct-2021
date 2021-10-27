@@ -1,3 +1,16 @@
 {
-  "articles": []
+  "articles": [
+    {
+      "name": "Truc",
+      "price": 1.23,
+      "qty": 100,
+      "id": 1
+    },
+    {
+      "name": "Tournevis",
+      "price": 2.34,
+      "qty": 230,
+      "id": 2
+    }
+  ]
 }

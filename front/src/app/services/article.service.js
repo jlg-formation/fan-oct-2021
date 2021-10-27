@@ -14,7 +14,7 @@ module.service("articleService", [
     this.add = function (article) {
       this.articles.push(article);
       $http
-        .post("/api/articles", article)
+        .post("http://localhost:3000/api/articles", article)
         .then(() => {
           this.refresh();
         })
@@ -25,9 +25,10 @@ module.service("articleService", [
 
     this.refresh = function () {
       $http
-        .get("/api/articles")
-        .then((articles) => {
-          this.articles = articles;
+        .get("http://localhost:3000/api/articles")
+        .then((response) => {
+          console.log("response: ", response);
+          this.articles = response.data;
         })
         .catch((err) => {
           console.log("err: ", err);
