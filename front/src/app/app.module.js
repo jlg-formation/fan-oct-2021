@@ -2,7 +2,7 @@ console.log("module load");
 
 import "./stock/stock.module";
 
-var module = angular.module("app", ["ui.router", "app.stock"]);
+const module = angular.module("app", ["ui.router", "app.stock"]);
 
 require("./services/article.service");
 
