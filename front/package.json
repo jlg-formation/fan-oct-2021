@@ -7,7 +7,7 @@
     "start": "webpack serve",
     "build": "webpack --mode production",
     "watch": "webapck -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress open"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +25,7 @@
     "babel-plugin-angularjs-annotate": "^0.10.0",
     "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.4.0",
+    "cypress": "^8.7.0",
     "html-loader": "^3.0.0",
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.43.3",
